@@ -3,12 +3,6 @@
 
 class PID {
 public:
-  /*
-  * Errors
-  */
-  double p_error;
-  double i_error;
-  double d_error;
 
   /*
   * Coefficients
@@ -18,29 +12,34 @@ public:
   double Kd;
 
   /*
+   * PID intermediate variables
+   */
+  bool is_initialized;
+  bool is_first_pid_loop;
+  double cte_prev;
+  double cte_int;
+  double tau;
+
+  double steering;
+  double max_steering;
+  double min_steering;
+  /*
   * Constructor
   */
   PID();
-
   /*
   * Destructor.
   */
   virtual ~PID();
-
   /*
   * Initialize PID.
   */
   void Init(double Kp, double Ki, double Kd);
-
   /*
-  * Update the PID error variables given cross track error.
+  * Compute PID steering given crosstrack error
   */
-  void UpdateError(double cte);
+  double ComputeSteering(double cte);
 
-  /*
-  * Calculate the total PID error.
-  */
-  double TotalError();
 };
 
 #endif /* PID_H */
