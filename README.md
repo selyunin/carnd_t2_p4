@@ -21,7 +21,7 @@ In order to compile the code run the commands below in the `bash` shell in the r
 2. `cd build`
 3. `cmake ../src/`
 4. `make`
-5. `./particle_filter`
+5. `./pid`
 
 Create Eclipse project files:
 1. `cd build`
