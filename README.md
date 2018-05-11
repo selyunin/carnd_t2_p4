@@ -16,7 +16,7 @@ The project has been tested / run on Ubuntu.
 * gcc/g++ >= 5.4
 
 Cmake is used as a build system for the project. 
-In order to compile the code run the commands below in the bash shell in the root project directory:
+In order to compile the code run the commands below in the `bash` shell in the root project directory:
 1. `mkdir build`
 2. `cd build`
 3. `cmake ../src/`
@@ -39,14 +39,12 @@ As mentioned in the description, the control input is also bounded to `[-1;1]`.
 ## Reflection
 
 1. Describe the effect each of the P, I, D components had in your implementation.
----
 
 * `P` - magnitude of correction to the target point,
 * `I` - removing systematic bias,
 * `D` - adds smoothness when correction to the target point.
 
 2. Describe how the final hyper-parameters were chosen.
----
 
 I have used manual version of the twiddle algorithm described in the lecture.
 So essentially I started with a parameter guess that was shown in the lecture, 
